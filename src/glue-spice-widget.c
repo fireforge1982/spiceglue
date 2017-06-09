@@ -591,9 +591,10 @@ static void try_mouse_ungrab(SpiceDisplay *display)
     SPICE_DEBUG("%s", __FUNCTION__);
     SpiceDisplayPrivate *d = SPICE_DISPLAY_GET_PRIVATE(display);
 
-    if (!d->mouse_grab_active)
-        return;
-
+    if (!d->mouse_grab_active){
+		SPICE_DEBUG("mouse_grab_active : 0");
+		return;
+    }
     //gdk_pointer_ungrab(GDK_CURRENT_TIME);
     //gtk_grab_remove(GTK_WIDGET(display));
 #ifdef WIN32
